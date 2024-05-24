@@ -240,6 +240,7 @@ public JTextField getAnnedateFin(){
 
                     }
 					JOptionPane.showMessageDialog(null, "Votre demande réservation est efféctué " );
+					ReserverClientView.this.getClient().setDemandeeffectue(true);
 					ReserverClientView.this.getClient().DemandeReservation(ReserverClientView.this.getHotel(), datedebut ,datefin);	
 
 				

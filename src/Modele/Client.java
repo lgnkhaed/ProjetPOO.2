@@ -1,7 +1,7 @@
 package Modele;
 
 public class Client extends Utilisateur {
-
+  private Boolean demandeeffectue = false;
     /* Constructor  */
   public Client(String lastname,String firstname,Integer age, String email , String motdepasse,Hotel hotel){
     super(lastname, firstname, age, email, motdepasse);
@@ -13,7 +13,7 @@ public class Client extends Utilisateur {
  public Reservation DemandeReservation(Hotel hotel ,Date datedebut, Date datefin) {
    Reservation demandereserv = new Reservation(hotel,this,datedebut,datefin ); 
   
-  
+   this.setDemandeeffectue(true);
    hotel.listeadDemandeReservation.put(demandereserv.getCodeStringResrv(),demandereserv);
    return demandereserv;
   }
@@ -37,4 +37,13 @@ public class Client extends Utilisateur {
      System.out.println("Reservation not found");
     } 
   }
+
+  /* getter and setter pour demande  */
+  public Boolean getDemandeeffectue(){
+   return  this.demandeeffectue;
+  }
+
+ public void setDemandeeffectue(Boolean A){
+  this.demandeeffectue = A;
+ }
 }

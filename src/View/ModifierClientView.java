@@ -10,23 +10,38 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
 
-import Modele.Client;
-import Modele.Hotel;
+import Modele.*;
 
 import java.awt.Color;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+
 import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 /* une vue pour le client ou il peut modifier sa reservation    ***/
 public class ModifierClientView extends JFrame {
 
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
-	private JTextField textField;
-	private JTextField textField_1;
+	
 	private JTextField textField_2;
     private Hotel ht; 
 	private Client client; 
+	/* date debut  */
+	public JComboBox<Integer> comboBox = new JComboBox<Integer>(); /* jour date debut */
+	public JComboBox<Mois> comboBox_1 = new JComboBox<Mois>(); /* mois dae debut  */
+	public  JTextField textField_1; /* annee date debut  */
+
+
+
+	/* date fin  */
+	public JComboBox<Integer> comboBox_2 = new JComboBox<Integer>(); /* jour date fin  */
+	public JComboBox<Mois> comboBox_1_1 = new JComboBox<Mois>();
+	public  JTextField textField =  new JTextField();
+
+
 	/**
 	 * Launch the application.
 	 */
@@ -61,17 +76,9 @@ public class ModifierClientView extends JFrame {
 		lblNewLabel.setFont(new Font("Palatino Linotype", Font.PLAIN, 19));
 		lblNewLabel.setBounds(44, 11, 267, 26);
 		contentPane.add(lblNewLabel);
+
+
 		
-		/*rentre le nom de la reservation*/
-		JLabel lblNewLabel1 = new JLabel("Nom :");
-		lblNewLabel1.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		lblNewLabel1.setBounds(54, 48, 46, 14);
-		contentPane.add(lblNewLabel1);
-		
-		textField_2 = new JTextField();
-		textField_2.setBounds(126, 48, 86, 20);
-		contentPane.add(textField_2);
-		textField_2.setColumns(10);
 		
 		/* rentre date du debut du sejour*/
 		JLabel lblNewLabel_4 = new JLabel("Début du séjour :");
@@ -82,14 +89,14 @@ public class ModifierClientView extends JFrame {
 		lblNewLabel_1.setBounds(31, 113, 46, 14);
 		contentPane.add(lblNewLabel_1);
 		
-		JComboBox<String> comboBox = new JComboBox<String>();
-		comboBox.setModel(new DefaultComboBoxModel<String>(new String[] {"1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31"}));
+		// JComboBox<Integer> comboBox = new JComboBox<Integer>();
+		comboBox.setModel(new DefaultComboBoxModel<Integer>(new Integer[] {1, 2,3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15,16,17,18,19,20,21,22,23,24,25,26,27,28, 29, 30, 31}));
 		comboBox.setSelectedIndex(1);
 		comboBox.setBounds(67, 109, 40, 22);
 		contentPane.add(comboBox);
 		
-		JComboBox<String> comboBox_1 = new JComboBox<String>();
-		comboBox_1.setModel(new DefaultComboBoxModel<String>(new String[] {"Janvier", "Février", "Mars", "Avril", "Mai", "Juin", "Juillet", "Août", "Septembre", "Octobre", "Novembre", "Décembre"}));
+		// JComboBox<Mois> comboBox_1 = new JComboBox<Mois>();
+		comboBox_1.setModel(new DefaultComboBoxModel<Mois>(Mois.values()));
 		comboBox_1.setSelectedIndex(1);
 		comboBox_1.setBounds(169, 109, 86, 22);
 		contentPane.add(comboBox_1);
@@ -118,8 +125,8 @@ public class ModifierClientView extends JFrame {
 		lblNewLabel_1_1.setBounds(31, 175, 46, 14);
 		contentPane.add(lblNewLabel_1_1);
 		
-		JComboBox<String> comboBox_2 = new JComboBox<String>();
-		comboBox_2.setModel(new DefaultComboBoxModel<String>(new String[] {"1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31"}));
+		// JComboBox<Integer> comboBox_2 = new JComboBox<Integer>();
+		comboBox_2.setModel(new DefaultComboBoxModel<Integer>(new Integer[] {1, 2,3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15,16,17,18,19,20,21,22,23,24,25,26,27,28, 29, 30, 31}));
 		comboBox_2.setSelectedIndex(1);
 		comboBox_2.setBounds(67, 171, 40, 22);
 		contentPane.add(comboBox_2);
@@ -128,8 +135,8 @@ public class ModifierClientView extends JFrame {
 		lblNewLabel_2_1.setBounds(125, 175, 46, 14);
 		contentPane.add(lblNewLabel_2_1);
 		
-		JComboBox<String> comboBox_1_1 = new JComboBox<String>();
-		comboBox_1_1.setModel(new DefaultComboBoxModel<String>(new String[] {"Janvier", "Février", "Mars", "Avril", "Mai", "Juin", "Juillet", "Août", "Septembre", "Octobre", "Novembre", "Décembre"}));
+		// JComboBox<Mois> comboBox_1_1 = new JComboBox<Mois>();
+		comboBox_1_1.setModel(new DefaultComboBoxModel<Mois>(Mois.values()));
 		comboBox_1_1.setSelectedIndex(1);
 		comboBox_1_1.setBounds(169, 171, 86, 22);
 		contentPane.add(comboBox_1_1);
@@ -139,7 +146,7 @@ public class ModifierClientView extends JFrame {
 		contentPane.add(lblNewLabel_3_1);
 		
 		
-		textField = new JTextField();
+		// textField = new JTextField();
 		textField.setBounds(309, 172, 66, 20);
 		contentPane.add(textField);
 		textField.setColumns(10);
@@ -149,9 +156,90 @@ public class ModifierClientView extends JFrame {
 		JButton btnNewButton = new JButton("Modifier");
 		btnNewButton.setBounds(155, 215, 113, 23);
 		contentPane.add(btnNewButton);
-	
-	}
+		btnNewButton.addActionListener(new ActionListener() {
+			@Override 
+			public void actionPerformed(ActionEvent e){
+               try {
+					// Reservation Reserv = new Reservation(ReserverClientView.this.getHotel(), ReserverClientView.this.getClient(),Date(comboBox.getSelectedItem() ,ReserverClientView.this.comboBox_1.getSelectedItem(),Integer.parseInt(ReserverClientView.this.textField_1.getText())) ,Date(ReserverClientView.this.comboBox_2.getSelectedItem() ,ReserverClientView.this.comboBox_1_1.getSelectedItem(),Integer.parseInt(ReserverClientView.this.textField_2.getText())));
+	                Integer jourdatedebut = (Integer) ModifierClientView.this.comboBox.getSelectedItem();
+					Integer anneedatedebut = (Integer) Integer.parseInt(ModifierClientView.this.textField_1.getText());
+					Mois moisdatedebut = (Mois) ModifierClientView.this.comboBox_1.getSelectedItem();
+					
+					Integer jourdateFin =(Integer) ModifierClientView.this.comboBox_2.getSelectedItem(); 
+					Integer anneedateFin = Integer.parseInt(ModifierClientView.this.textField.getText());
+					Mois moisdateFin = (Mois) ModifierClientView.this.comboBox_1_1.getSelectedItem();
+					
+					Date datedebut = Datem(jourdatedebut,moisdatedebut,anneedatedebut);
+					Date datefin =  Datem(jourdateFin ,moisdateFin,anneedateFin);
+				
+					if(anneedatedebut  > anneedateFin )
+                    {
+                        throw new DateInvalidException();
+                    }
 
+                    if(test(anneedateFin, anneedateFin)){
+                        if(Moisnbrs(moisdatedebut)>Moisnbrs(moisdateFin))
+                        throw new DateInvalidException();
+                    }
+
+                    if(test(anneedateFin, anneedateFin)){
+                        if(test(Moisnbrs(moisdatedebut),Moisnbrs(moisdateFin)))
+                        {
+                            if(jourdatedebut>jourdateFin)
+                            {throw new DateInvalidException();}
+                        }
+
+                    }
+					if(ModifierClientView.this.getClient().getDemandeeffectue() == true)
+					JOptionPane.showMessageDialog(null, "Votre modification est  est efféctuée " );	
+                    else{
+						JOptionPane.showMessageDialog(null, "Aucune demande réservation trouvée  " );
+					}
+				
+				}catch( NumberFormatException ex){
+					JOptionPane.showMessageDialog(null, "Veuillez entrer une date correcte. ");
+				 } catch (DateInvalidException e1) {
+					JOptionPane.showMessageDialog(null, e1.getMessage());
+				}  
+			}
+		});
+	}
+		private Date Datem(Integer jourdatedebut, Mois moisdatedebut, Integer anneedatedebut) {
+			Date date = new Date(jourdatedebut, moisdatedebut, anneedatedebut);
+			return date;
+		}
+
+		private Integer Moisnbrs(Mois mois){
+			switch (mois) {
+				case January:
+					return 1;
+				case February:
+					return 2;
+				case March:
+					return 3;
+				case April:
+					return 4;
+				case May:
+					return 5;
+				case June:
+					return 6;
+				case July:
+					return 7;
+				case August:
+					return 8;
+				case September:
+					return 9;
+				case October:
+					return 10;
+				case November:
+					return 11;
+				case December:
+					return 12;
+				
+				default:
+					return 0;
+			}
+	    }
 
 		 /* getter and setter for Client  */
   public Client getClient(){
@@ -171,5 +259,14 @@ public class ModifierClientView extends JFrame {
   public void setHotel(Hotel hotel){
       this.ht=hotel;
   }
+  
+      public boolean test (int a, int b){
+       if(a == b){
+            return true;
+           }else {
+	            return false;
+                     }
+       }
+
 
 }
