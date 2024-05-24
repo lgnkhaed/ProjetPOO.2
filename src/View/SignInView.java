@@ -15,6 +15,8 @@ import javax.swing.JRadioButton;
 import javax.swing.ButtonGroup;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 import java.awt.event.ActionEvent;
 
 public class SignInView extends JFrame {
@@ -173,13 +175,19 @@ public class SignInView extends JFrame {
             
             if(e.getSource() == submit ){
                 try {
-                   if(Administrateur.isSelected()){
+                   
+                    if (areFieldsEmpty()) {
+                        JOptionPane.showMessageDialog(null, "Veuillez remplir tous les champs.");
+                    }else if(!isEmailValid(textFieldEmail.getText())) { 
+                    JOptionPane.showMessageDialog(null, "Veuillez entrer un email valide.");
+                   
+                    }else if(Administrateur.isSelected()){ 
                      Administrateur  admin = new Administrateur(SignInView.this.getHotel(), textFieldNom.getText(), textFieldPrenom.getText() , Integer.parseInt(textFieldAge.getText()) , textFieldEmail.getText(), Passowrd.getText()); 
                       LoginView login = new LoginView();
                       login.setVisible(true);
                       login.setHotelLog(SignInView.this.escapade);
                       SignInView.this.dispose(); 
-
+                     
                     }else if (Client.isSelected()){
                      Client clnt = new Client(textFieldNom.getText(), textFieldPrenom.getText(), Integer.parseInt(textFieldAge.getText()), textFieldEmail.getText(), Passowrd.getText(),SignInView.this.getHotel());
                      LoginView login = new LoginView();
@@ -201,7 +209,20 @@ public class SignInView extends JFrame {
 
     }
 
+    private boolean areFieldsEmpty() {
+        return textFieldNom.getText().isEmpty() ||
+               textFieldPrenom.getText().isEmpty() ||
+               textFieldEmail.getText().isEmpty() ||
+               textFieldAge.getText().isEmpty() ||
+               new String(Passowrd.getPassword()).isEmpty();
+    }
 
+    private boolean isEmailValid(String email) {
+        String emailRegex = "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,6}$";
+        Pattern pattern = Pattern.compile(emailRegex);
+        Matcher matcher = pattern.matcher(email);
+        return matcher.matches();
+    }
         /* setter of the hotel  */
         
         public void setHotelSign(Hotel htl){

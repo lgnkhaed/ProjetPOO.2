@@ -10,12 +10,10 @@ public class Client extends Utilisateur {
   }
 
  /* methode poour demander une reservation  */
- public Reservation DemandeReservation(Hotel hotel ,Date datedebut, Date datefin) throws DateInvalidException{
+ public Reservation DemandeReservation(Hotel hotel ,Date datedebut, Date datefin) {
    Reservation demandereserv = new Reservation(hotel,this,datedebut,datefin ); 
-   Integer d = Date.Daysbetweendates(datedebut,datefin);
-   if(datedebut.getYear() > datefin.getYear() || datedebut.getYear() == datefin.getYear() && datedebut.getM() > datefin.getM()  || d < 0) {
-	   throw new DateInvalidException();
-   }
+  
+  
    hotel.listeadDemandeReservation.put(demandereserv.getCodeStringResrv(),demandereserv);
    return demandereserv;
   }

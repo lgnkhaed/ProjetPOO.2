@@ -95,32 +95,32 @@ public void setM(Integer m) {
 }
 
 /* methode qui renvoie le nombre d'un mois quelconque */
-public static Integer Moisnbr(Mois mois, Integer m) {
+public  Integer Moisnbr(Mois mois) {
     switch (mois) {
         case January:
-        	m = 1;
+            return 1;
+        case February:
+            return 2;
         case March:
-        	m = 3;
-        case May: 
-        	m = 5;
-        case July:
-        	m = 7;
-        case August:
-        	m = 8;
-        case October:
-        	m = 10;
-        case December:
-        	m = 12;   
-        case February :
-        	m = 2;
+            return 3;
         case April:
-        	m = 4;
+            return 4;
+        case May:
+            return 5;
         case June:
-        	m = 6;
+            return 6;
+        case July:
+            return 7;
+        case August:
+            return 8;
         case September:
-        	m = 9;
-        case November: 
-        	m = 11;
+            return 9;
+        case October:
+            return 10;
+        case November:
+            return 11;
+        case December:
+            return 12;
         
         default:
             return 0;

@@ -2,6 +2,7 @@ package Modele;
 
 //import java.util.*;
 import java.util.HashMap;
+import java.util.Map;
 
 public class Hotel {
     private  Integer countRoom = 0 ;
@@ -87,4 +88,13 @@ public class Hotel {
     /**************************     public Integer getCountDemandeReserv(){
         return this.countDemandeReserv;
     }***************************/
+
+    public void parcourirHashMap() {
+            for (Map.Entry<String, Reservation> entry : listeadDemandeReservation.entrySet()) {
+                String cle = entry.getKey();
+                Reservation valeur = entry.getValue();
+                // Faites quelque chose avec la clé et la valeur
+                System.out.println("Clé : " + cle + ", Valeur : " + valeur);
+            }
+        }
 }

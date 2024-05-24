@@ -220,12 +220,33 @@ public JTextField getAnnedateFin(){
 					
 					Date datedebut = Datem(jourdatedebut,moisdatedebut,anneedatedebut);
 					Date datefin =  Datem(jourdateFin ,moisdateFin,anneedateFin);
-					ReserverClientView.this.getClient().DemandeReservation(ReserverClientView.this.getHotel(), datedebut ,datefin);			 
+				
+					if(anneedatedebut  > anneedateFin )
+                    {
+                        throw new DateInvalidException();
+                    }
+
+                    if(test(anneedateFin, anneedateFin)){
+                        if(Moisnbrs(moisdatedebut)>Moisnbrs(moisdateFin))
+                        throw new DateInvalidException();
+                    }
+
+                    if(test(anneedateFin, anneedateFin)){
+                        if(test(Moisnbrs(moisdatedebut),Moisnbrs(moisdateFin)))
+                        {
+                            if(jourdatedebut>jourdateFin)
+                            {throw new DateInvalidException();}
+                        }
+
+                    }
+					JOptionPane.showMessageDialog(null, "Votre demande réservation est efféctué " );
+					ReserverClientView.this.getClient().DemandeReservation(ReserverClientView.this.getHotel(), datedebut ,datefin);	
+
+				
 				}catch( NumberFormatException ex){
 					JOptionPane.showMessageDialog(null, "Veuillez entrer une date correcte. ");
 				 } catch (DateInvalidException e1) {
-					JOptionPane.showMessageDialog(null, "Veuillez entrer une date valide "); 
-					e1.printStackTrace();
+					JOptionPane.showMessageDialog(null, e1.getMessage());
 				}  
 				
 				}else{
@@ -238,13 +259,53 @@ public JTextField getAnnedateFin(){
 				return date;
 			}
 
-		
-
+			private Integer Moisnbrs(Mois mois){
+				switch (mois) {
+					case January:
+						return 1;
+					case February:
+						return 2;
+					case March:
+						return 3;
+					case April:
+						return 4;
+					case May:
+						return 5;
+					case June:
+						return 6;
+					case July:
+						return 7;
+					case August:
+						return 8;
+					case September:
+						return 9;
+					case October:
+						return 10;
+					case November:
+						return 11;
+					case December:
+						return 12;
+					
+					default:
+						return 0;
+				}
+			}
+			
 		});
+	}
+	     public boolean test (int a, int b)
+	     {
+		if(a == b)
+		{
+		return true;
+		}else {
+			return false;
+		}
+	    }
 		
 
 	}
 
 
-}
+
 /* il faut faire  les getter de tous les text field et les comboboxs and work with them   */

@@ -9,7 +9,7 @@ public class DateInvalidException extends Exception {
 	
 	
 	public DateInvalidException() {
-		super("Invalid date !");
+		super("Veuillez bien choisir les dates  !");
 	}
 
 }
