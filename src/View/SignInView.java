@@ -180,7 +180,11 @@ public class SignInView extends JFrame {
                         JOptionPane.showMessageDialog(null, "Veuillez remplir tous les champs.");
                     }else if(!isEmailValid(textFieldEmail.getText())) { 
                     JOptionPane.showMessageDialog(null, "Veuillez entrer un email valide.");
-                   
+                    }else if ( Integer.parseInt(textFieldAge.getText()) <= 0){
+                        JOptionPane.showMessageDialog(null, "Veuillez entrez un age positif");
+                    }else if ( Integer.parseInt(textFieldAge.getText()) <= 15){
+                        JOptionPane.showMessageDialog(null, "Désolé ! vous devez ramener un parent ");
+                        SignInView.this.dispose();
                     }else if(Administrateur.isSelected()){ 
                      Administrateur  admin = new Administrateur(SignInView.this.getHotel(), textFieldNom.getText(), textFieldPrenom.getText() , Integer.parseInt(textFieldAge.getText()) , textFieldEmail.getText(), Passowrd.getText()); 
                       LoginView login = new LoginView();
