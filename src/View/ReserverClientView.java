@@ -1,28 +1,75 @@
 package View;
-
-
 import java.awt.EventQueue;
-
+import Modele.*;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import java.awt.Color;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 import javax.swing.JComboBox;
 import javax.swing.DefaultComboBoxModel;
 import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JCheckBox;
+
+
 /* une vue pour  le client, demande reservation    */
+
 public class ReserverClientView extends JFrame {
 
 	private static final long serialVersionUID = 1L;
+	private Hotel ht;
+	private Client client; 
 	private JPanel contentPane;
-	private JTextField textField;
-	private JTextField textField_1;
-	private JTextField textField_2;
 
+	
+	JLabel lblNewLabel_4 = new JLabel("Début du séjour :");
+	JLabel lblNewLabel_4_1 = new JLabel("Fin du séjour :");
+
+	JLabel lblNewLabel_2 = new JLabel("Mois");
+	JLabel lblNewLabel_2_1 = new JLabel("Mois");
+	JLabel lblNewLabel_1 = new JLabel("Jour"); 
+	JLabel lblNewLabel_1_1 = new JLabel("Jour");
+	JLabel lblNewLabel_3 = new JLabel("Année");
+	JLabel lblNewLabel_3_1 = new JLabel("Année");
+	private JComboBox<Integer> comboBox = new JComboBox<Integer>(); /* jour date debut  */
+	private JComboBox<Mois> comboBox_1 = new JComboBox<Mois>(); /* mois date debut  */
+	private JTextField textField_1 = new JTextField(); /* annne date debut  */
+	
+	JComboBox<Integer> comboBox_2 = new JComboBox<Integer>(); /* jour date fin  */
+	JComboBox<Mois> comboBox_1_1 = new JComboBox<Mois>(); /* mois date fin  */
+	private JTextField textField_2 = new JTextField(); /* annee fin  */
+
+	/* getter and setter  */
+/* date debut  */
+public JComboBox<Integer> getJourdatedebut(){
+	return this.comboBox;
+}
+public JComboBox<Mois> getMoisdatedebut(){
+	return this.comboBox_1;
+}
+
+public JTextField getAnnedatedebut(){
+	return this.textField_1;
+}
+/* date fin  */
+public JComboBox<Integer> getJourdateFin(){
+	return this.comboBox_2;
+}
+
+public JComboBox<Mois> getMoisdateFin(){
+	return this.comboBox_1_1;
+}
+
+
+public JTextField getAnnedateFin(){
+	return this.textField_2;
+}
+  
 	/**
 	 * Launch the application.
 	 */
@@ -39,6 +86,24 @@ public class ReserverClientView extends JFrame {
 		});
 	}
 
+	 /* getter and setter for Client  */
+	 public Client getClient(){
+		return this.client;
+	  }
+	
+	  public void setClient(Client clnt){
+		  this.client=clnt;
+	  }
+	
+	
+	  /* getter and setter for Hotel  */
+	  public Hotel getHotel(){
+		return this.ht;
+	  }
+	
+	  public void setHotel(Hotel hotel){
+		  this.ht=hotel;
+	  }
 	/**
 	 * Create the frame.
 	 */
@@ -51,48 +116,39 @@ public class ReserverClientView extends JFrame {
 
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
+	
 		
-		/* il rentre le nom pour la reservation*/
-		JLabel lblNewLabel = new JLabel("Nom :");
-		lblNewLabel.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		lblNewLabel.setBounds(51, 33, 46, 14);
-		contentPane.add(lblNewLabel);
-		
-		textField = new JTextField();
-		textField.setBounds(107, 32, 86, 20);
-		contentPane.add(textField);
-		textField.setColumns(10);
 		
 		/* rentre la date de debut de la reservation*/
-		JLabel lblNewLabel_4 = new JLabel("Début du séjour :");
+		
 		lblNewLabel_4.setBounds(31, 69, 113, 14);
 		contentPane.add(lblNewLabel_4);
 		
-		JLabel lblNewLabel_1 = new JLabel("Jour");
+		
 		lblNewLabel_1.setBounds(31, 94, 46, 14);
 		contentPane.add(lblNewLabel_1);
 		
-		JComboBox<Object> comboBox = new JComboBox<Object>();
-		comboBox.setModel(new DefaultComboBoxModel<Object>(new String[] {"1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31"}));
+		
+		comboBox.setModel(new DefaultComboBoxModel<Integer>(new Integer[] {1, 2,3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15,16,17,18,19,20,21,22,23,24,25,26,27,28, 29, 30, 31}));
 		comboBox.setSelectedIndex(1);
 		comboBox.setBounds(67, 90, 40, 22);
 		contentPane.add(comboBox);
 		
-		JComboBox<String> comboBox_1 = new JComboBox<String>();
-		comboBox_1.setModel(new DefaultComboBoxModel<String>(new String[] {"Janvier", "Février", "Mars", "Avril", "Mai", "Juin", "Juillet", "Août", "Septembre", "Octobre", "Novembre", "Décembre"}));
+		
+		comboBox_1.setModel(new DefaultComboBoxModel<Mois>(Mois.values()));
 		comboBox_1.setSelectedIndex(1);
 		comboBox_1.setBounds(169, 90, 86, 22);
 		contentPane.add(comboBox_1);
 		
-		JLabel lblNewLabel_2 = new JLabel("Mois");
+		
 		lblNewLabel_2.setBounds(125, 94, 46, 14);
 		contentPane.add(lblNewLabel_2);
 		
-		JLabel lblNewLabel_3 = new JLabel("Année");
+		
 		lblNewLabel_3.setBounds(265, 94, 46, 14);
 		contentPane.add(lblNewLabel_3);
 		
-		textField_1 = new JTextField();
+		
 		textField_1.setBounds(321, 91, 69, 20);
 		contentPane.add(textField_1);
 		textField_1.setColumns(10);
@@ -102,41 +158,45 @@ public class ReserverClientView extends JFrame {
 		
 		
 		/*rentre la date du fin de resservation*/
-		JLabel lblNewLabel_4_1 = new JLabel("Fin du séjour :");
+		
 		lblNewLabel_4_1.setBounds(31, 121, 113, 14);
 		contentPane.add(lblNewLabel_4_1);
 		
-		JLabel lblNewLabel_1_1 = new JLabel("Jour");
+		
 		lblNewLabel_1_1.setBounds(31, 146, 46, 14);
 		contentPane.add(lblNewLabel_1_1);
 		
-		JComboBox<String> comboBox_2 = new JComboBox<String>();
-		comboBox_2.setModel(new DefaultComboBoxModel<String>(new String[] {"1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31"}));
+		
+		comboBox_2.setModel(new DefaultComboBoxModel<Integer>(new Integer[] {1, 2,3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15,16,17,18,19,20,21,22,23,24,25,26,27,28, 29, 30, 31}));
 		comboBox_2.setSelectedIndex(1);
 		comboBox_2.setBounds(67, 142, 40, 22);
 		contentPane.add(comboBox_2);
 		
-		JLabel lblNewLabel_2_1 = new JLabel("Mois");
+		
 		lblNewLabel_2_1.setBounds(125, 146, 46, 14);
 		contentPane.add(lblNewLabel_2_1);
 		
-		JComboBox<String> comboBox_1_1 = new JComboBox<String>();
-		comboBox_1_1.setModel(new DefaultComboBoxModel<String>(new String[] {"Janvier", "Février", "Mars", "Avril", "Mai", "Juin", "Juillet", "Août", "Septembre", "Octobre", "Novembre", "Décembre"}));
+		
+		comboBox_1_1.setModel(new DefaultComboBoxModel<Mois>(Mois.values()));
 		comboBox_1_1.setSelectedIndex(1);
 		comboBox_1_1.setBounds(169, 142, 86, 22);
 		contentPane.add(comboBox_1_1);
 		
-		JLabel lblNewLabel_3_1 = new JLabel("Année");
+		
 		lblNewLabel_3_1.setBounds(265, 146, 46, 14);
 		contentPane.add(lblNewLabel_3_1);
 		
-		textField_2 = new JTextField();
+		
 		textField_2.setColumns(10);
 		textField_2.setBounds(321, 143, 69, 20);
 		contentPane.add(textField_2);
 		
 		
-		
+	    //********hadi decor berk ***********
+		JCheckBox chckbxNewCheckBox = new JCheckBox("J'ai lu et j'accepte les termes et conditions de réservation de l'hotel.");
+		chckbxNewCheckBox.setFont(new Font("Helvetica Neue", Font.PLAIN, 11));
+		chckbxNewCheckBox.setBounds(31, 185, 368, 23);
+		contentPane.add(chckbxNewCheckBox);
 		
 		
 		
@@ -144,11 +204,47 @@ public class ReserverClientView extends JFrame {
 		JButton btnNewButton = new JButton("Confirmer");
 		btnNewButton.setBounds(155, 215, 113, 23);
 		contentPane.add(btnNewButton);
+		btnNewButton.addActionListener(new ActionListener() {
+			@Override 
+			public void actionPerformed(ActionEvent e){
+               if(chckbxNewCheckBox.isSelected()){
+                 try {
+					// Reservation Reserv = new Reservation(ReserverClientView.this.getHotel(), ReserverClientView.this.getClient(),Date(comboBox.getSelectedItem() ,ReserverClientView.this.comboBox_1.getSelectedItem(),Integer.parseInt(ReserverClientView.this.textField_1.getText())) ,Date(ReserverClientView.this.comboBox_2.getSelectedItem() ,ReserverClientView.this.comboBox_1_1.getSelectedItem(),Integer.parseInt(ReserverClientView.this.textField_2.getText())));
+	                Integer jourdatedebut = (Integer) ReserverClientView.this.getJourdatedebut().getSelectedItem();
+					Integer anneedatedebut = (Integer) Integer.parseInt(ReserverClientView.this.getAnnedatedebut().getText());
+					Mois moisdatedebut = (Mois) ReserverClientView.this.getMoisdatedebut().getSelectedItem();
+					
+					Integer jourdateFin =(Integer) ReserverClientView.this.getJourdateFin().getSelectedItem(); 
+					Integer anneedateFin = Integer.parseInt(ReserverClientView.this.getAnnedateFin().getText());
+					Mois moisdateFin = (Mois) ReserverClientView.this.getMoisdateFin().getSelectedItem();
+					
+					Date datedebut = Datem(jourdatedebut,moisdatedebut,anneedatedebut);
+					Date datefin =  Datem(jourdateFin ,moisdateFin,anneedateFin);
+					ReserverClientView.this.getClient().DemandeReservation(ReserverClientView.this.getHotel(), datedebut ,datefin);			 
+				}catch( NumberFormatException ex){
+					JOptionPane.showMessageDialog(null, "Veuillez entrer une date correcte. ");
+				 } catch (DateInvalidException e1) {
+					JOptionPane.showMessageDialog(null, "Veuillez entrer une date valide "); 
+					e1.printStackTrace();
+				}  
+				
+				}else{
+				  JOptionPane.showMessageDialog(null, "Vous devez accepter les termes et les conditions ");
+			   }
+			}
+
+			private Date Datem(Integer jourdatedebut, Mois moisdatedebut, Integer anneedatedebut) {
+				Date date = new Date(jourdatedebut, moisdatedebut, anneedatedebut);
+				return date;
+			}
+
 		
-		//********hadi decor berk ***********
-		JCheckBox chckbxNewCheckBox = new JCheckBox("J'ai lu et j'accepte les termes et conditions de réservation de l'hotel.");
-		chckbxNewCheckBox.setFont(new Font("Helvetica Neue", Font.PLAIN, 11));
-		chckbxNewCheckBox.setBounds(31, 185, 368, 23);
-		contentPane.add(chckbxNewCheckBox);
+
+		});
+		
+
 	}
+
+
 }
+/* il faut faire  les getter de tous les text field et les comboboxs and work with them   */

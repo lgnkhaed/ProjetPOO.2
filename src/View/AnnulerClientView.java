@@ -1,10 +1,9 @@
 package View;
-
 import java.awt.EventQueue;
-
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+import Modele.*;
 import java.awt.Color;
 import javax.swing.JLabel;
 import java.awt.Font;
@@ -18,7 +17,9 @@ public class AnnulerClientView extends JFrame {
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
 	private JTextField textField;
-
+	private Hotel ht; 
+	private Client client; 
+	
 	/**
 	 * Launch the application.
 	 */
@@ -78,4 +79,25 @@ public class AnnulerClientView extends JFrame {
 		contentPane.add(chckbxNewCheckBox);
 	}
 
+			 /* getter and setter for Client  */
+  public Client getClient(){
+	return this.client;
+  }
+
+  public void setClient(Client clnt){
+      this.client=clnt;
+  }
+
+
+  /* getter and setter for Hotel  */
+  public Hotel getHotel(){
+	return this.ht;
+  }
+
+  public void setHotel(Hotel hotel){
+      this.ht=hotel;
+  }
+
 }
+
+

@@ -29,8 +29,16 @@ public class Hotel {
     public HashMap<Integer,Administrateur> getlisteAdmini(){
         return this.listeadAdministrateurs;
     }
-
-    /* Getters and Setters  */
+     /* getter pour la liste Clients  */
+     public HashMap<Integer,Client> getlisteClients(){
+        return this.listeadCients;
+    }
+    
+    
+    
+    
+    
+     /* Getters and Setters  */
     /**************public void setcountDemandeReserv(Integer countdemandreserv){
         this.countDemandeReserv=countdemandreserv;
     }****************/

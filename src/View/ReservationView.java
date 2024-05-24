@@ -1,7 +1,7 @@
 package View;
 
 import java.awt.EventQueue;
-
+import Modele.*;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
@@ -18,7 +18,8 @@ public class ReservationView extends JFrame {
 	private JPanel contentPane;
 	private JTextField textField;
 	private JTextField textField_1;
-
+    
+	private Hotel ht;
 	/**
 	 * Launch the application.
 	 */
@@ -98,6 +99,17 @@ public class ReservationView extends JFrame {
 		
 		
 	}
+ 
+
+
+  /* getter and setter for Hotel  */
+  public Hotel getHotel(){
+	return this.ht;
+  }
+
+  public void setHotel(Hotel hotel){
+      this.ht=hotel;
+  }
 
 }
 

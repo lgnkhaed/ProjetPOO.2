@@ -6,6 +6,7 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import java.awt.Color;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.SwingConstants;
 import java.awt.Font;
 import javax.swing.border.MatteBorder;
@@ -16,9 +17,13 @@ import javax.swing.JRadioButton;
 import javax.swing.ButtonGroup;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
+import java.util.HashMap;
 import java.awt.event.ActionEvent;
 /* login view deg 1  */
 public class LoginView extends JFrame {
+
+
+
     private Hotel escapade; 
     private static final long serialVersionUID = 1L;
     private JPanel contentPane;
@@ -27,7 +32,7 @@ public class LoginView extends JFrame {
     private JPasswordField passwordField;
     JLabel lblLogin = new JLabel("AUTHENTIFICATION");
     JPanel panel_1 = new JPanel();
-    JLabel lblNewLabel = new JLabel("Nom d'utilisateur : ");
+    JLabel lblNewLabel = new JLabel(" Email : ");
   
     JLabel lblNewLabel_1 = new JLabel("Mot de passe :");
     
@@ -84,13 +89,13 @@ public class LoginView extends JFrame {
         contentPane.add(panel_1);
         panel_1.setLayout(null);
 
-        // JLabel lblNewLabel = new JLabel("Nom d'utilisateur : ");
+        // JLabel lblNewLabel = new JLabel("Email: ");
         lblNewLabel.setForeground(new Color(255, 255, 255));
         lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
-        lblNewLabel.setBounds(30, 20, 150, 14);
+        lblNewLabel.setBounds(30, 23, 150, 14);
         panel_1.add(lblNewLabel);
 
-      textField = new JTextField();
+        textField = new JTextField();
         textField.setBounds(164, 20, 128, 20);
         panel_1.add(textField);
         textField.setColumns(10);
@@ -124,38 +129,55 @@ public class LoginView extends JFrame {
         btnNewButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 //  String nomUtilisateur = textField.getText();
-               // AdministrateurView fenetre2 = new AdministrateurView(nomUtilisateur);
-                // fenetre2.setVisible(true);
+               
+               
                 if (e.getSource()==btnNewButton ){ 
                     /* hna je dois ajouter un code pour verifier si le password et l'utilistaeur sont pas null est juste   */
+                   
+                   
                     if(Administrateur.isSelected()){ 
-                        String nomAdmin = textField.getText();
-                        /* Ici il y aurra des instructions si on arrivera a faire une bases de donnes  */
-                      
-
-                        /*les instructions pour View  */
-                        AdministrateurView frame3 = new AdministrateurView(); 
-                        frame3.setNomUtilisateur(nomAdmin);
-                        frame3.setVisible(true);
-                        LoginView.this.dispose();
-
- 
-                      /* des instructions pour le modele  */ 
-                      Administrateur admin = new Administrateur(escapade, null, null, null, nomAdmin,passwordField.getText());
-                      
+                        String Email = textField.getText();
+                        String mdp = passwordField.getText();
+                        HashMap<Integer, Administrateur> admins = LoginView.this.escapade.getlisteAdmini();
+                        Boolean trouve = false; 
+                             for (Administrateur admin : admins.values()) {
+                                if (admin.getEmailadress().equals(Email) && admin.getMotdepasse().equals(mdp) ){
+                                    AdministrateurView frame3 = new AdministrateurView(); 
+                                    frame3.setNomUtilisateur(admin.getLastname()+" "+admin.getFirstname());
+                                    frame3.setVisible(true);
+                                    LoginView.this.dispose();
+                                    trouve = true;   
+                                    break;
+                                }
+                             }
+                            
+                             if(trouve == false ){
+                                JOptionPane.showMessageDialog(null, "Email ou Mot de passe incorrect");
+                             }                        
 
                     }else if ( Client.isSelected()){ 
-                        String nomClient = textField.getText(); 
-
-                        /* instructions pour views  */
-                        ClientView frame4 = new ClientView(); 
-                        frame4.setNomUtilisateur(nomClient);
-                        frame4.setVisible(true);
-                        LoginView.this.dispose();
-
-
-                        /* ionstructions pour modele  */
-                        Client client = new Client(null , null, null,nomClient, passwordField.getText (),escapade);
+                        
+                        String Email2 = textField.getText();
+                        String mdp2 = passwordField.getText();
+                        HashMap<Integer, Client> clients = LoginView.this.escapade.getlisteClients();
+                        Boolean trouvee = false;  
+                        for (Client client : clients.values()){
+                            
+                            if (client.getEmailadress().equals(Email2) && client.getMotdepasse().equals(mdp2) ){
+                                ClientView frame4 = new ClientView(); 
+                                frame4.setNomUtilisateur(client.getLastname()+" "+client.getFirstname());
+                                frame4.setVisible(true);
+                                LoginView.this.dispose();
+                                trouvee = true;   
+                                frame4.setClient(client);
+                                break;
+                            }
+                         }
+                         if(trouvee == false ){
+                            JOptionPane.showMessageDialog(null, "Email ou Mot de passe incorrect");
+                         }                      
+                    }else {
+                        JOptionPane.showMessageDialog(null, "Veuillez choisir un type d'utilisateur");
                     }
                     
                 }  
@@ -163,14 +185,17 @@ public class LoginView extends JFrame {
         });
         
     }
+
+
+
     /* getter du Button  */
     public JButton getAuthentificationButton(){
       return btnNewButton;
     }
     /* Getter du hotel  */
-			public Hotel getHotelforFrame(){
+		public Hotel getHotelforFrame(){
 				return this.escapade;
-			}
+		}
              
     /* Settet du Hotel */
        public void setHotelLog(Hotel htl){

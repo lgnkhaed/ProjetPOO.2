@@ -9,6 +9,10 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
+
+import Modele.Client;
+import Modele.Hotel;
+
 import java.awt.Color;
 import javax.swing.JLabel;
 import java.awt.Font;
@@ -21,7 +25,8 @@ public class ModifierClientView extends JFrame {
 	private JTextField textField;
 	private JTextField textField_1;
 	private JTextField textField_2;
-
+    private Hotel ht; 
+	private Client client; 
 	/**
 	 * Launch the application.
 	 */
@@ -146,5 +151,25 @@ public class ModifierClientView extends JFrame {
 		contentPane.add(btnNewButton);
 	
 	}
+
+
+		 /* getter and setter for Client  */
+  public Client getClient(){
+	return this.client;
+  }
+
+  public void setClient(Client clnt){
+      this.client=clnt;
+  }
+
+
+  /* getter and setter for Hotel  */
+  public Hotel getHotel(){
+	return this.ht;
+  }
+
+  public void setHotel(Hotel hotel){
+      this.ht=hotel;
+  }
 
 }

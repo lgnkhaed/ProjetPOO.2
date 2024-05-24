@@ -4,28 +4,20 @@ import View.*;
 import java.awt.EventQueue;
 public class App {
     public static void main(String[] args) throws Exception {
-      /* 
-        EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                try {
-                    MyFrameView frame = new MyFrameView();
-                    new ControlmyFrame(frame);
-                    frame.setVisible(true);
-                    Hotel ht =  frame.getHotelforFrame();
-                                        //System.out.println("bon l'admin est "+ ht.getlisteAdmini().get(1));             
-                    
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
-            }
+        Hotel ht = new Hotel(); 
+        Administrateur admin1 = new Administrateur(ht,"khaled" ,"laggoun", 20, "khaled", "123");
+        Client client1 = new Client("hamiti", "amine", 20,"amine", "hhhh", ht);
+        Client clienth = new Client("ouadahi", "kad", 20,"kad", "haha", ht);
 
-        });*/
+
+
+
         MyFrameView frame = new MyFrameView();
                     new ControlmyFrame(frame);
                     frame.setVisible(true);
-                    Hotel ht =  frame.getHotelforFrame();
+                    frame.sethotel(ht);
         System.out.println("eyyyye"+ht.getCountAdministra());
- 
+        System.out.println("eyyyye"+ht.getCountClients());
     }
 }
 /* quand je cree une fenetre avec un Button lazm mm class control ta3ha n'extensiha w nmdlhja l veiw hdyk comme ^parametres  */

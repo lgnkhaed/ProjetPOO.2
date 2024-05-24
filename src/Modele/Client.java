@@ -6,6 +6,7 @@ public class Client extends Utilisateur {
   public Client(String lastname,String firstname,Integer age, String email , String motdepasse,Hotel hotel){
     super(lastname, firstname, age, email, motdepasse);
     hotel.setCountClients(hotel.getCountClients()+1);
+    hotel.listeadCients.put(hotel.getCountClients(),this);
   }
 
  /* methode poour demander une reservation  */

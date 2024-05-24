@@ -13,6 +13,7 @@ import javax.swing.JButton;
 /* une vue du client apres le Login   */
 public class ClientView extends JFrame {
     private Hotel escapade; 
+	private Client client; 
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
 	JLabel lblNewLabel = new JLabel("Bienvenue ");
@@ -70,6 +71,8 @@ public class ClientView extends JFrame {
 					/** instructions pour less views  */
 					ReserverClientView frame8 = new ReserverClientView();
 					frame8.setVisible(true);
+					frame8.setHotel(ClientView.this.getHotel());
+					frame8.setClient(ClientView.this.getClient());
 				 }
 				}
 			});
@@ -84,6 +87,8 @@ public class ClientView extends JFrame {
 						/* instructiuons for views */
 						ModifierClientView frame9 = new ModifierClientView();
 						frame9.setVisible(true);
+						frame9.setHotel(ClientView.this.getHotel());
+						frame9.setClient(ClientView.this.getClient());
 					}
 				}
 			});
@@ -98,6 +103,8 @@ public class ClientView extends JFrame {
 						/* lesq instructions pour views  */
 						AnnulerClientView frame10 = new AnnulerClientView();
 						frame10.setVisible(true);
+						frame10.setHotel(ClientView.this.getHotel());
+						frame10.setClient(ClientView.this.getClient());
 					}
 				}
 			});
@@ -133,5 +140,14 @@ public class ClientView extends JFrame {
 	  public void setHotel (Hotel ht ){
 		this.escapade=ht;
 	  }
+
+	  /* getter and setter for Client  */
+	  public Client getClient(){
+		return this.client; 
+	}
+
+	public void setClient(Client clnt ){
+		this.client = clnt; 
+	}
 
 }

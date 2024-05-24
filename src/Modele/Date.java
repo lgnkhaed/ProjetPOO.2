@@ -1,10 +1,21 @@
 package Modele;
 
 public class Date {
-    private  Integer day;
+    private  Integer day; 
     private Mois mois; 
     private Integer year; 
     private Integer m; 
+
+
+
+    /* lazm le jour ykon tahet 31 w ça depend le mois   */
+    public Boolean Jourcorrect(Integer jour , Mois mois ){
+         if( jour>= 1 && jour <= joursDansMois(mois)){
+            return true;
+         }else{
+            return false;
+         }
+    }
 
 /* constructeur  */
     public Date(Integer day , Mois mois ,Integer year){
@@ -28,7 +39,9 @@ public class Date {
 
 /*setters  */
   public void setDay(Integer day){
-    this.day=day;
+    if ( day >= 1 && day <= 31){
+      this.day = day;
+    }
   }
 
   public void setMois(Mois mois){
