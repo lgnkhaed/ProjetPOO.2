@@ -26,16 +26,16 @@ public class ReserverClientView extends JFrame {
 	private Client client; 
 	private JPanel contentPane;
 
-	
-	JLabel lblNewLabel_4 = new JLabel("Début du séjour :");
-	JLabel lblNewLabel_4_1 = new JLabel("Fin du séjour :");
+	public JLabel lblnomutil= new JLabel();
+	public JLabel lblNewLabel_4 = new JLabel("Début du séjour :");
+	public JLabel lblNewLabel_4_1 = new JLabel("Fin du séjour :");
 
-	JLabel lblNewLabel_2 = new JLabel("Mois");
-	JLabel lblNewLabel_2_1 = new JLabel("Mois");
-	JLabel lblNewLabel_1 = new JLabel("Jour"); 
-	JLabel lblNewLabel_1_1 = new JLabel("Jour");
-	JLabel lblNewLabel_3 = new JLabel("Année");
-	JLabel lblNewLabel_3_1 = new JLabel("Année");
+	public JLabel lblNewLabel_2 = new JLabel("Mois");
+	public JLabel lblNewLabel_2_1 = new JLabel("Mois");
+	public JLabel lblNewLabel_1 = new JLabel("Jour"); 
+	public 	JLabel lblNewLabel_1_1 = new JLabel("Jour");
+	public 	JLabel lblNewLabel_3 = new JLabel("Année");
+	public 	JLabel lblNewLabel_3_1 = new JLabel("Année");
 	private JComboBox<Integer> comboBox = new JComboBox<Integer>(); /* jour date debut  */
 	private JComboBox<Mois> comboBox_1 = new JComboBox<Mois>(); /* mois date debut  */
 	private JTextField textField_1 = new JTextField(); /* annne date debut  */
@@ -124,6 +124,9 @@ public JTextField getAnnedateFin(){
 		lblNewLabel_4.setBounds(31, 69, 113, 14);
 		contentPane.add(lblNewLabel_4);
 		
+		lblnomutil.setBounds(31, 20, 250, 50);
+		contentPane.add(lblnomutil);
+		lblnomutil.setFont(new Font("Palatino Linotype", Font.BOLD, 24));
 		
 		lblNewLabel_1.setBounds(31, 94, 46, 14);
 		contentPane.add(lblNewLabel_1);
@@ -303,7 +306,11 @@ public JTextField getAnnedateFin(){
 			return false;
 		}
 	    }
-		
+		public void setNomUtilisateur(String nomUtilisateur) {
+    	
+			this.lblnomutil.setText( nomUtilisateur);
+		}
+	
 
 	}
 

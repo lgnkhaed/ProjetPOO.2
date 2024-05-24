@@ -73,6 +73,7 @@ public class ClientView extends JFrame {
 					frame8.setVisible(true);
 					frame8.setHotel(ClientView.this.getHotel());
 					frame8.setClient(ClientView.this.getClient());
+					frame8.setNomUtilisateur(ClientView.this.getClient().getFirstname()+" "+ClientView.this.getClient().getLastname());
 				 }
 				}
 			});
@@ -89,6 +90,7 @@ public class ClientView extends JFrame {
 						frame9.setVisible(true);
 						frame9.setHotel(ClientView.this.getHotel());
 						frame9.setClient(ClientView.this.getClient());
+						frame9.setNomUtilisateur(ClientView.this.getClient().getFirstname()+" "+ClientView.this.getClient().getLastname());
 					}
 				}
 			});
@@ -105,6 +107,7 @@ public class ClientView extends JFrame {
 						frame10.setVisible(true);
 						frame10.setHotel(ClientView.this.getHotel());
 						frame10.setClient(ClientView.this.getClient());
+						frame10.setNomUtilisateur(ClientView.this.getClient().getFirstname()+" "+ClientView.this.getClient().getLastname());
 					}
 				}
 			});

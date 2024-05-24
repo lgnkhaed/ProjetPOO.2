@@ -29,6 +29,7 @@ public class ModifierClientView extends JFrame {
 	private JTextField textField_2;
     private Hotel ht; 
 	private Client client; 
+	public JLabel lblnomclient = new JLabel();
 	/* date debut  */
 	public JComboBox<Integer> comboBox = new JComboBox<Integer>(); /* jour date debut */
 	public JComboBox<Mois> comboBox_1 = new JComboBox<Mois>(); /* mois dae debut  */
@@ -76,6 +77,11 @@ public class ModifierClientView extends JFrame {
 		lblNewLabel.setFont(new Font("Palatino Linotype", Font.PLAIN, 19));
 		lblNewLabel.setBounds(44, 11, 267, 26);
 		contentPane.add(lblNewLabel);
+
+
+		lblnomclient.setFont(new Font("Palatino Linotype", Font.PLAIN, 19));
+		lblnomclient.setBounds(44, 30, 267, 26);
+		contentPane.add(lblnomclient);
 
 
 		
@@ -267,6 +273,9 @@ public class ModifierClientView extends JFrame {
 	            return false;
                      }
        }
-
+    public void setNomUtilisateur(String nomUtilisateur) {
+    	
+		this.lblnomclient.setText( nomUtilisateur);
+	}
 
 }
