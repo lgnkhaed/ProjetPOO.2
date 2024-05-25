@@ -147,6 +147,8 @@ public class LoginView extends JFrame {
                                     frame3.setVisible(true);
                                     LoginView.this.dispose();
                                     trouve = true;   
+                                    frame3.setHotel(LoginView.this.getHotelforFrame());
+                                    frame3.setAdmin(admin);
                                     break;
                                 }
                              }
@@ -170,6 +172,7 @@ public class LoginView extends JFrame {
                                 LoginView.this.dispose();
                                 trouvee = true;   
                                 frame4.setClient(client);
+                                frame4.setHotel(LoginView.this.getHotelforFrame());
                                 break;
                             }
                          }

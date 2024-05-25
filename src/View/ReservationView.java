@@ -18,7 +18,7 @@ public class ReservationView extends JFrame {
 	private JPanel contentPane;
 	private JTextField textField;
 	private JTextField textField_1;
-    
+    public Administrateur admin;
 	private Hotel ht;
 	/**
 	 * Launch the application.
@@ -111,5 +111,16 @@ public class ReservationView extends JFrame {
       this.ht=hotel;
   }
 
+
+  
+public Administrateur getAdmin(){
+	return this.admin;
+  }
+  
+  public void setAdmin(Administrateur admin){
+	this.admin=admin;
+  }
+
+  
 }
 

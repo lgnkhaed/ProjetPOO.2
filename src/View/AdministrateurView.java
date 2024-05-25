@@ -5,7 +5,7 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import java.awt.Color;
 import java.awt.EventQueue;
-
+import Modele.*; 
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import java.awt.Font;
@@ -17,9 +17,11 @@ public class AdministrateurView extends JFrame {
 
     private static final long serialVersionUID = 1L;
     private JPanel contentPane;
-    JButton btnNewButton_1 = new JButton("Chambres");
-    JButton btnNewButton = new JButton("Réservations");
-    JLabel lblNewLabel = new JLabel("Bienvenue ");
+    public  JButton btnNewButton_1 = new JButton("Chambres");
+    public JButton btnNewButton = new JButton("Réservations");
+    public JLabel lblNewLabel = new JLabel("Bienvenue ");
+    private Hotel ht; 
+    private Administrateur admin;
     
     
     
@@ -62,6 +64,8 @@ public class AdministrateurView extends JFrame {
                if(ee.getSource() == btnNewButton_1 ){
                  ChambresView ChambPouAdmin = new ChambresView(); 
                  ChambPouAdmin.setVisible(true);
+                 ChambPouAdmin.setHotel(AdministrateurView.this.getHotel());
+                 ChambPouAdmin.setAdmin(AdministrateurView.this.getAdmin());
                  /* la meme chose on ferme pas la fenetre  */
                }
             }
@@ -78,6 +82,8 @@ public class AdministrateurView extends JFrame {
               if(e.getSource()==btnNewButton){
                 ReservationView frame6 = new ReservationView();
                 frame6.setVisible(true);
+                frame6.setHotel(AdministrateurView.this.getHotel());
+                frame6.setAdmin(AdministrateurView.this.getAdmin());
                 /* ici on  ferme pas la fenetre d'Administrateur  */
               }
             }
@@ -97,7 +103,7 @@ public class AdministrateurView extends JFrame {
     
     // constructeur jsp si obliger a revoir // // NOn amine pas obligeee Pas d'utilisateur dertha abstract la classse hdyk // 
     public AdministrateurView(String nomUtilisateur) {
-		// TODO Auto-generated constructor stub
+		
 	}
 
 	/* cette methode est la pour afficher le nom de l adminstrateur qu il a entrer lors de l authentification 
@@ -108,4 +114,24 @@ public class AdministrateurView extends JFrame {
     public void setNomUtilisateur(String nomUtilisateur) {
 		this.lblNewLabel.setText("Bienvenue " + nomUtilisateur);
     }
+
+
+/*/ getter and setter for Hotel  */
+public Hotel getHotel(){ 
+  return this.ht; 
+  }  
+
+  public void setHotel (Hotel ht ){
+  this.ht=ht;
+  }
+
+public Administrateur getAdmin(){
+  return this.admin;
+}
+
+public void setAdmin(Administrateur admin){
+  this.admin=admin;
+}
+
+
 }

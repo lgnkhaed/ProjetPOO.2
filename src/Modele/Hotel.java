@@ -31,10 +31,12 @@ public class Hotel {
         return this.listeadAdministrateurs;
     }
      /* getter pour la liste Clients  */
-     public HashMap<Integer,Client> getlisteClients(){
+     public HashMap<Integer,Room> getlisteRooms(){
+        return this.listeadRooms;
+    }
+    public HashMap<Integer,Client> getlisteClients(){
         return this.listeadCients;
     }
-    
     
     
     
@@ -83,6 +85,11 @@ public class Hotel {
 
     public Integer getCountReserv(){
         return this.countReserv;
+    }
+
+
+    public boolean roomExists(int numroom) {
+        return listeadRooms.containsKey(numroom);
     }
     
     /**************************     public Integer getCountDemandeReserv(){

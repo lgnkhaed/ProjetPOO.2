@@ -12,16 +12,15 @@ import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-import javax.swing.JTextField;
-import javax.swing.JButton;
-import javax.swing.JCheckBox;
+import javax.swing.*;
+
 
 /* la vue pour le client deg  2 */
 public class AnnulerClientView extends JFrame {
  
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
-	private JTextField textField;
+	// private JTextField textField;
 	private Hotel ht; 
 	private Client client; 
 	public JLabel lblNOmClient = new JLabel(); 

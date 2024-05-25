@@ -26,7 +26,7 @@ public class ModifierClientView extends JFrame {
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
 	
-	private JTextField textField_2;
+	// private JTextField textField_2;
     private Hotel ht; 
 	private Client client; 
 	public JLabel lblnomclient = new JLabel();
@@ -175,8 +175,8 @@ public class ModifierClientView extends JFrame {
 					Integer anneedateFin = Integer.parseInt(ModifierClientView.this.textField.getText());
 					Mois moisdateFin = (Mois) ModifierClientView.this.comboBox_1_1.getSelectedItem();
 					
-					Date datedebut = Datem(jourdatedebut,moisdatedebut,anneedatedebut);
-					Date datefin =  Datem(jourdateFin ,moisdateFin,anneedateFin);
+					// Date datedebut = Datem(jourdatedebut,moisdatedebut,anneedatedebut);
+					// Date datefin =  Datem(jourdateFin ,moisdateFin,anneedateFin);
 				
 					if(anneedatedebut  > anneedateFin )
                     {
@@ -210,10 +210,10 @@ public class ModifierClientView extends JFrame {
 			}
 		});
 	}
-		private Date Datem(Integer jourdatedebut, Mois moisdatedebut, Integer anneedatedebut) {
+		/* private Date Datem(Integer jourdatedebut, Mois moisdatedebut, Integer anneedatedebut) {
 			Date date = new Date(jourdatedebut, moisdatedebut, anneedatedebut);
 			return date;
-		}
+		}*/
 
 		private Integer Moisnbrs(Mois mois){
 			switch (mois) {

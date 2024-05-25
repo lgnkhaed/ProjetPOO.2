@@ -15,35 +15,20 @@ public class Administrateur extends Utilisateur{
     /* Methods for Administrateur to manipulate Rooms */
     
     /* ADD room  */ 
-    public void Newroom(Hotel hotel) throws UtilisateurNonAutoriseException, ChambreDejaExistanteException{
-    	if(!estAdmin) {
-  		  throw new UtilisateurNonAutoriseException();
-  	  }else{
-  		  
-        Room rm = new Room(hotel);
-        if(rm.existe = true) {
-        	throw new ChambreDejaExistanteException();
-        }else {
+    public void Newroom(Hotel hotel,Integer num) {  
+        Room rm = new Room(hotel,num);
         hotel.listeadRooms.put(hotel.getCountRoom(),rm);/* a la construction de la rm il y aura l'incrementation de countroom  */
         System.out.println(rm.toString()+" is added to the list");
         rm.existe = true;
-        }
-  	  } 
+     }
+  	  
    
-    }
+    
    /* method Delete room  */
-    public void Deleteroom(Hotel hotel,Room rm) throws UtilisateurNonAutoriseException, ChambreInexistanteException{
-    	if(!estAdmin) {
-  		  throw new UtilisateurNonAutoriseException();
-  	  }else{
-    	Room value = hotel.listeadRooms.get(rm.number);
-        if(value != null ){
-            hotel.listeadRooms.remove(rm.number);
-            System.out.println(rm.toString()+" is removed");
-        }else{
-        	throw new ChambreInexistanteException();
-        }
-  	  }
+    public void Deleteroom(Hotel hotel,Room rm) throws  ChambreInexistanteException{
+        hotel.listeadRooms.remove(rm.getNumber());
+        System.out.println(rm.toString()+" is removed");
+  	  
     }
 
     /* change the state of a room  */
