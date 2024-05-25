@@ -149,7 +149,7 @@ public class LoginView extends JFrame {
                                     AdministrateurView frame3 = new AdministrateurView(); 
                                     frame3.setNomUtilisateur(admin.getLastname()+" "+admin.getFirstname());
                                     frame3.setVisible(true);
-                                    LoginView.this.dispose();
+                                    // LoginView.this.dispose();
                                     trouve = true;   
                                     frame3.setHotel(LoginView.this.getHotelforFrame());
                                     frame3.setAdmin(admin);
@@ -173,7 +173,7 @@ public class LoginView extends JFrame {
                                 ClientView frame4 = new ClientView(); 
                                 frame4.setNomUtilisateur(client.getLastname()+" "+client.getFirstname());
                                 frame4.setVisible(true);
-                                LoginView.this.dispose();
+                               //   LoginView.this.dispose();
                                 trouvee = true;   
                                 frame4.setClient(client);
                                 frame4.setHotel(LoginView.this.getHotelforFrame());

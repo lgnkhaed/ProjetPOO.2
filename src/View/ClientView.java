@@ -49,7 +49,7 @@ public class ClientView extends JFrame {
 		setTitle("Gestion d'hotel"); 
 
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(500,200, 450, 300);
+		setBounds(400,100, 450, 300);
 		
 				contentPane = new JPanel();
 		contentPane.setBackground(new Color(173, 216, 230));

@@ -49,7 +49,7 @@ public class AdministrateurView extends JFrame {
         setTitle("Gestion d'hotel"); 
 
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setBounds(500,200, 450, 300);
+        setBounds(600,300, 450, 300);
                 contentPane = new JPanel();
         contentPane.setBackground(new Color(173, 216, 230)); 
         contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
