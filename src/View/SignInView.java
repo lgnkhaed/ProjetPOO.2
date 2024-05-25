@@ -62,16 +62,21 @@ public class SignInView extends JFrame {
 
     /* constructor  */
     public SignInView(){
+        setTitle("Gestion d'hotel"); 
+
+
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setBounds(100, 100, 450, 300);
+        setBounds(500,200, 450, 300);
         contentPane2 = new JPanel();
-        contentPane2.setBackground(new Color(128, 128, 0));
+        contentPane2.setBackground(new Color(173, 216, 230));
         contentPane2.setBorder(new EmptyBorder(5, 5, 5, 5));
         setContentPane(contentPane2);
         contentPane2.setLayout(null);
 
+
+        
         panel2.setBorder(new MatteBorder(1, 1, 1, 1, (Color) new Color(0, 0, 0)));
-        panel2.setBackground(new Color(128, 128, 64));
+        panel2.setBackground(new Color(255, 204, 0));
         panel2.setBounds(10, 11, 401, 50);
         contentPane2.add(panel2);
         panel2.setLayout(null); 
@@ -83,16 +88,17 @@ public class SignInView extends JFrame {
         lblsignin.setBounds(57, 9, 292, 29);
         panel2.add(lblsignin);
 
-        panel21.setBorder(new MatteBorder(1, 1, 1, 1, (Color) new Color(0, 0, 0)));
-        panel21.setBackground(new Color(128, 128, 64));
+         panel21.setBorder(new MatteBorder(1, 1, 1, 1, (Color) new Color(0, 0, 0)));
+        panel21.setBackground(new Color(255, 204, 0));
         panel21.setBounds(10, 74, 401, 176);
         contentPane2.add(panel21);
         panel21.setLayout(null);
 
 
+
       /* Nom  */
         lblNom.setForeground(new Color(255, 255, 255));
-       // lblNom.setHorizontalAlignment(SwingConstants.CENTER);
+        // lblNom.setHorizontalAlignment(SwingConstants.CENTER);
         lblNom.setBounds(10, 20, 150, 14);
          panel21.add(lblNom);
       
@@ -100,20 +106,19 @@ public class SignInView extends JFrame {
         textFieldNom.setBounds(55, 20, 110, 20);
         panel21.add(textFieldNom);
         textFieldNom.setColumns(10);
-       
-      /* prénom  */
+       /* prénom  */
 
-        lblprenom.setForeground(new Color(255, 255, 255));
-         // lblprenom.setHorizontalAlignment(SwingConstants.CENTER);
-         lblprenom.setBounds(185, 20, 120, 14);
-         panel21.add(lblprenom);
-  
-         textFieldPrenom = new JTextField();
-         textFieldPrenom.setBounds(265, 20, 110, 20);
-         panel21.add(textFieldPrenom);
-         textFieldPrenom.setColumns(10);
+       lblprenom.setForeground(new Color(255, 255, 255));
+       // lblprenom.setHorizontalAlignment(SwingConstants.CENTER);
+       lblprenom.setBounds(185, 20, 120, 14);
+       panel21.add(lblprenom);
+
+       textFieldPrenom = new JTextField();
+       textFieldPrenom.setBounds(265, 20, 110, 20);
+       panel21.add(textFieldPrenom);
+       textFieldPrenom.setColumns(10);
         
-         /* email  */
+       /* email  */
 
          lblEmail.setForeground(new Color(255, 255, 255));
          // lblEmail.setHorizontalAlignment(SwingConstants.CENTER);
@@ -125,7 +130,7 @@ public class SignInView extends JFrame {
          panel21.add(textFieldEmail);
          textFieldEmail.setColumns(10);
 
-         /* Age  */
+    /* Age  */
          /* Don't forget to fix the exception of the age input in case if it's wrong  */
          lblAge.setForeground(new Color(255, 255, 255));
          // lblAge.setHorizontalAlignment(SwingConstants.CENTER);
@@ -148,25 +153,25 @@ public class SignInView extends JFrame {
          Passowrd.setBounds(265, 60, 110, 20);
          panel21.add(Passowrd);
          Passowrd.setColumns(10);
-
          /* je vais ajouter un radio  button dans le Sign aussi  pour faore la diff entre l'administrateur et le Client   */
-        JRadioButton Administrateur  = new JRadioButton("Administrateur");
-        JRadioButton Client   = new JRadioButton("Client");
-        Client.setBounds(305,105, 80, 14);
-        Administrateur.setBounds(185, 105, 110, 14);
-        ButtonGroup group = new ButtonGroup();
-        group.add(Client);
-        group.add(Administrateur);
-
-        panel21.add(Administrateur);
-        panel21.add(Client);
-        
+         JRadioButton Administrateur  = new JRadioButton("Administrateur");
+         JRadioButton Client   = new JRadioButton("Client");
+         Client.setBounds(305,105, 80, 14);
+         Administrateur.setBounds(185, 105, 110, 14);
+         ButtonGroup group = new ButtonGroup();
+         group.add(Client);
+         group.add(Administrateur);
+ 
+         panel21.add(Administrateur);
+         panel21.add(Client);
+         
         
         
         /* Button submit  */ /* ici il y aurra l'action du submit  */
-        submit.setBackground(new Color(255, 255, 255));
-        submit.setBounds(125, 140, 130, 23);
-        panel21.add(submit);
+           /* Button submit  */ /* ici il y aurra l'action du submit  */
+           submit.setBackground(new Color(255, 255, 255));
+           submit.setBounds(125, 140, 130, 23);
+           panel21.add(submit);
 
         submit.addActionListener(new ActionListener() {
 

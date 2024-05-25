@@ -63,10 +63,12 @@ public class ModifierClientView extends JFrame {
 	 * Create the frame.
 	 */
 	public ModifierClientView() {
+		setTitle("Gestion d'hotel"); 
+
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 450, 300);
-		contentPane = new JPanel();
-		contentPane.setBackground(new Color(128, 128, 0));
+		setBounds(500,200, 450, 300);
+			contentPane = new JPanel();
+		contentPane.setBackground(new Color(173, 216, 230));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 
 		setContentPane(contentPane);
@@ -77,10 +79,10 @@ public class ModifierClientView extends JFrame {
 		lblNewLabel.setFont(new Font("Palatino Linotype", Font.PLAIN, 19));
 		lblNewLabel.setBounds(44, 11, 267, 26);
 		contentPane.add(lblNewLabel);
-
+		
 
 		lblnomclient.setFont(new Font("Palatino Linotype", Font.PLAIN, 19));
-		lblnomclient.setBounds(44, 30, 267, 26);
+		lblnomclient.setBounds(44, 50, 267, 26);
 		contentPane.add(lblnomclient);
 
 
@@ -90,7 +92,7 @@ public class ModifierClientView extends JFrame {
 		JLabel lblNewLabel_4 = new JLabel("Début du séjour :");
 		lblNewLabel_4.setBounds(31, 84, 113, 14);
 		contentPane.add(lblNewLabel_4);
-		
+
 		JLabel lblNewLabel_1 = new JLabel("Jour");
 		lblNewLabel_1.setBounds(31, 113, 46, 14);
 		contentPane.add(lblNewLabel_1);
@@ -98,13 +100,13 @@ public class ModifierClientView extends JFrame {
 		// JComboBox<Integer> comboBox = new JComboBox<Integer>();
 		comboBox.setModel(new DefaultComboBoxModel<Integer>(new Integer[] {1, 2,3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15,16,17,18,19,20,21,22,23,24,25,26,27,28, 29, 30, 31}));
 		comboBox.setSelectedIndex(1);
-		comboBox.setBounds(67, 109, 40, 22);
+		comboBox.setBounds(60, 109, 66, 22);
 		contentPane.add(comboBox);
 		
 		// JComboBox<Mois> comboBox_1 = new JComboBox<Mois>();
 		comboBox_1.setModel(new DefaultComboBoxModel<Mois>(Mois.values()));
 		comboBox_1.setSelectedIndex(1);
-		comboBox_1.setBounds(169, 109, 86, 22);
+		comboBox_1.setBounds(155, 109, 110, 22);
 		contentPane.add(comboBox_1);
 		
 		JLabel lblNewLabel_2 = new JLabel("Mois");
@@ -121,7 +123,6 @@ public class ModifierClientView extends JFrame {
 		textField_1.setColumns(10);
 		
 		
-		
 		/* rentre date de fin de sejour*/
 		JLabel lblNewLabel_4_1 = new JLabel("Fin du séjour :");
 		lblNewLabel_4_1.setBounds(31, 150, 113, 14);
@@ -134,23 +135,24 @@ public class ModifierClientView extends JFrame {
 		// JComboBox<Integer> comboBox_2 = new JComboBox<Integer>();
 		comboBox_2.setModel(new DefaultComboBoxModel<Integer>(new Integer[] {1, 2,3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15,16,17,18,19,20,21,22,23,24,25,26,27,28, 29, 30, 31}));
 		comboBox_2.setSelectedIndex(1);
-		comboBox_2.setBounds(67, 171, 40, 22);
+		comboBox_2.setBounds(60, 171, 66, 22);
 		contentPane.add(comboBox_2);
-		
+
 		JLabel lblNewLabel_2_1 = new JLabel("Mois");
 		lblNewLabel_2_1.setBounds(125, 175, 46, 14);
 		contentPane.add(lblNewLabel_2_1);
 		
+		
 		// JComboBox<Mois> comboBox_1_1 = new JComboBox<Mois>();
 		comboBox_1_1.setModel(new DefaultComboBoxModel<Mois>(Mois.values()));
 		comboBox_1_1.setSelectedIndex(1);
-		comboBox_1_1.setBounds(169, 171, 86, 22);
+		comboBox_1_1.setBounds(155, 171, 110, 22);
 		contentPane.add(comboBox_1_1);
+		
 		
 		JLabel lblNewLabel_3_1 = new JLabel("Année");
 		lblNewLabel_3_1.setBounds(265, 175, 46, 14);
 		contentPane.add(lblNewLabel_3_1);
-		
 		
 		// textField = new JTextField();
 		textField.setBounds(309, 172, 66, 20);
@@ -162,6 +164,7 @@ public class ModifierClientView extends JFrame {
 		JButton btnNewButton = new JButton("Modifier");
 		btnNewButton.setBounds(155, 215, 113, 23);
 		contentPane.add(btnNewButton);
+	
 		btnNewButton.addActionListener(new ActionListener() {
 			@Override 
 			public void actionPerformed(ActionEvent e){

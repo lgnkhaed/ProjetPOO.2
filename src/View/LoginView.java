@@ -60,17 +60,19 @@ public class LoginView extends JFrame {
      */
     public LoginView() {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setBounds(100, 100, 450, 300);
-        contentPane = new JPanel();
-        contentPane.setBackground(new Color(128, 128, 0));
-        contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+        setTitle("Gestion d'hotel"); 
+
+        setBounds(500,200, 450, 300);
+                        contentPane = new JPanel();
+        contentPane.setBackground(new Color(173, 216, 230));
+                contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 
         setContentPane(contentPane);
         contentPane.setLayout(null);
 
         // JPanel panel = new JPanel();
         panel.setBorder(new MatteBorder(1, 1, 1, 1, (Color) new Color(0, 0, 0)));
-        panel.setBackground(new Color(128, 128, 64));
+        panel.setBackground(new Color(255, 204, 0)); 
         panel.setBounds(10, 11, 401, 50);
         contentPane.add(panel);
         panel.setLayout(null);
@@ -83,33 +85,35 @@ public class LoginView extends JFrame {
         panel.add(lblLogin);
 
          //JPanel panel_1 = new JPanel();
-        panel_1.setBorder(new MatteBorder(1, 1, 1, 1, (Color) new Color(0, 0, 0)));
-        panel_1.setBackground(new Color(128, 128, 64));
+          panel_1.setBorder(new MatteBorder(1, 1, 1, 1, (Color) new Color(0, 0, 0)));
+        panel_1.setBackground(new Color(255, 204, 0)); 
         panel_1.setBounds(10, 74, 401, 176);
         contentPane.add(panel_1);
         panel_1.setLayout(null);
-
+  
         // JLabel lblNewLabel = new JLabel("Email: ");
-        lblNewLabel.setForeground(new Color(255, 255, 255));
-        lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
-        lblNewLabel.setBounds(30, 23, 150, 14);
-        panel_1.add(lblNewLabel);
+  lblNewLabel.setForeground(new Color(255, 255, 255));
+  lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
+  lblNewLabel.setBounds(30, 23, 150, 14);
+  panel_1.add(lblNewLabel);
 
-        textField = new JTextField();
-        textField.setBounds(164, 20, 128, 20);
-        panel_1.add(textField);
-        textField.setColumns(10);
 
-        // JLabel lblNewLabel_1 = new JLabel("Mot de passe :");
+  textField = new JTextField();
+  textField.setBounds(164, 20, 128, 20);
+  panel_1.add(textField);
+  textField.setColumns(10);
+
+         // JLabel lblNewLabel_1 = new JLabel("Mot de passe :");
         lblNewLabel_1.setForeground(new Color(255, 255, 255));
         lblNewLabel_1.setBounds(71, 50, 95, 14);
         panel_1.add(lblNewLabel_1);
 
+     
         passwordField = new JPasswordField();
         passwordField.setBounds(164, 50, 128, 20);
         panel_1.add(passwordField);
 
-       /* je vais ajouter un radio  button dans le login pour faore la diff entre l'administrateur et le Client   */
+        /* je vais ajouter un radio  button dans le login pour faore la diff entre l'administrateur et le Client   */
         JRadioButton Administrateur  = new JRadioButton("Administrateur");
         JRadioButton Client   = new JRadioButton("Client");
         Client.setBounds(220,90, 80, 14);
@@ -121,7 +125,7 @@ public class LoginView extends JFrame {
         panel_1.add(Administrateur);
         panel_1.add(Client);
 
-        /*c est ce boutton qui est important qui va permettre la connexion ici on va travailler*/
+           /*c est ce boutton qui est important qui va permettre la connexion ici on va travailler*/
        // JButton btnNewButton = new JButton("Authentification");
         btnNewButton.setBackground(new Color(255, 255, 255));
         btnNewButton.setBounds(146, 129, 130, 23);

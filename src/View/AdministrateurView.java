@@ -46,10 +46,12 @@ public class AdministrateurView extends JFrame {
      * Create the frame.
      */
     public AdministrateurView() {
+        setTitle("Gestion d'hotel"); 
+
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setBounds(100, 100, 450, 300);
-        contentPane = new JPanel();
-        contentPane.setBackground(new Color(128, 128, 0));
+        setBounds(500,200, 450, 300);
+                contentPane = new JPanel();
+        contentPane.setBackground(new Color(173, 216, 230)); 
         contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 
         setContentPane(contentPane);
@@ -92,8 +94,7 @@ public class AdministrateurView extends JFrame {
 
 
 
-
-       /* l'affichage du bienvenue   */
+/* l'affichage du bienvenue   */
         //JLabel lblNewLabel = new JLabel("Bienvenue ");
         lblNewLabel.setFont(new Font("Harlow Solid Italic", Font.PLAIN, 25));
         lblNewLabel.setBounds(50, 35, 500, 31);

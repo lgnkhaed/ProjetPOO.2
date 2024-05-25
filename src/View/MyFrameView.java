@@ -41,14 +41,18 @@ public class MyFrameView extends JFrame {
 	 * Create the frame.
 	 */
 	public MyFrameView() {
-		/*arriere plan*/
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 450, 300);
-		contentPane = new JPanel();
-		contentPane.setBackground(new Color(128, 128, 64));
-		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
-		setContentPane(contentPane);
-		contentPane.setLayout(null);
+			/*arriere plan*/
+			setTitle("Gestion d'hotel"); 
+			setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+			setBounds(500,200, 450, 300);
+			 
+	
+			
+			contentPane = new JPanel();
+			contentPane.setBackground(new Color(173, 216, 230));
+			contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+			setContentPane(contentPane);
+			contentPane.setLayout(null);
        
         ht = new Hotel(); 
        
@@ -83,6 +87,7 @@ public class MyFrameView extends JFrame {
 		Signin.setFont(new Font("Goudy Old Style", Font.BOLD, 20));
 	  	contentPane.add(Signin);
         
+        
 		
 		  if (Signin != null) {
 			Signin.addActionListener( new ActionListener() {
@@ -98,13 +103,14 @@ public class MyFrameView extends JFrame {
 			});
 		}
         
-		/*simple ecriture */
-		JLabel lblNewLabel = new JLabel(" Escapade Hotel ");
-		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel.setFont(new Font("Lucida Calligraphy", Font.ITALIC, 23));
-		lblNewLabel.setBounds(56,20, 319, 32);
-		contentPane.add(lblNewLabel);
-		
+			/*simple ecriture */
+			JLabel lblNewLabel = new JLabel(" SunsetBay Hotel ");
+			lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
+			lblNewLabel.setFont(new Font("Lucida Calligraphy`", Font.BOLD, 34));
+			lblNewLabel.setForeground(new Color(255, 255, 102)); 
+	
+			lblNewLabel.setBounds(56,20, 319, 32);
+			contentPane.add(lblNewLabel);
 	}
            /* Getter pour mon buuttton d'Authentification   */
            public  JButton getAuthentifierButton(){ 

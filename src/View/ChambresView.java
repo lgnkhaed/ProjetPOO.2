@@ -50,35 +50,36 @@ public class ChambresView extends JFrame {
 	 * Create the frame.
 	 */
 	public ChambresView() {
-		
 		/*********** c sur ces classes qu il y aura le plus de travail ************/
 		
-		
+		setTitle("Gestion d'hotel"); 
+
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 450, 300);
-		contentPane = new JPanel();
-		contentPane.setBackground(new Color(128, 128, 0));
-		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		setBounds(500,200, 450, 300);
+				contentPane = new JPanel();
+		contentPane.setBackground(new Color(173, 216, 230));
+				contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
 		lblNewLabel_3 = new JLabel("Numéro de la chambre :");
-		lblNewLabel_3.setBounds(45, 39, 151, 14);
+		lblNewLabel_3.setBounds(65, 60, 151, 14);
 		contentPane.add(lblNewLabel_3);
 		lblNewLabel_3.setFont(new Font("Tahoma", Font.PLAIN, 12));
+		
 		
 		/*c le numero de la chambre qu on voudra faire les op sur */
 		/* on rentre le num de la chambre attention on doit utiliser exception pour pouvoir entreer que des nombres*/
 		textField = new JTextField();
-		textField.setBounds(195, 37, 86, 20);
+		textField.setBounds(210, 60, 86, 20);
 		contentPane.add(textField);
 		textField.setColumns(10);
-		
+
 		/*partie creation*/
 		/*button qui cree la chambres tjr utiliser les excptions qui vont avec exp si la chambre existe */
-		btnNewButton = new JButton("Créer");
-		btnNewButton.setBounds(10, 85, 103, 23);
+			btnNewButton = new JButton("Créer");
+		btnNewButton.setBounds(75, 150, 103, 23);
 		contentPane.add(btnNewButton);
 		btnNewButton.addActionListener(new ActionListener() {
 			@Override
@@ -157,8 +158,9 @@ public class ChambresView extends JFrame {
 		/*partie suppression*/
 		/* ici la suppression de la chambre*/
 		btnNewButton_2 = new JButton("Supprimer");
-		btnNewButton_2.setBounds(10, 195, 103, 23);
+		btnNewButton_2.setBounds(250, 150, 103, 23);
 		contentPane.add(btnNewButton_2);
+		
 		btnNewButton_2.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {

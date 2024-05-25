@@ -46,23 +46,26 @@ public class ClientView extends JFrame {
 	 * Create the frame.
 	 */
 	public ClientView() {
+		setTitle("Gestion d'hotel"); 
+
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 450, 300);
-		contentPane = new JPanel();
-		contentPane.setBackground(new Color(128, 128, 0));
+		setBounds(500,200, 450, 300);
+		
+				contentPane = new JPanel();
+		contentPane.setBackground(new Color(173, 216, 230));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 
 		setContentPane(contentPane);
 		  contentPane.setLayout(null);
-		
+
 		  //JLabel lblNewLabel = new JLabel("Bienvenue ");
-		  lblNewLabel.setBounds(45, 11, 500  , 30);
+		lblNewLabel.setBounds(45, 11, 500  , 30);
 	        lblNewLabel.setFont(new Font("Harlow Solid Italic", Font.PLAIN,25));
 	        contentPane.add(lblNewLabel);
-	        
+
 	        /* bouton pour ouvrir la fentre reserverclient  */
 	        //JButton btnNewButton = new JButton("Réserver");
-	        btnNewButton.setBounds(141, 63, 116, 31);
+	     btnNewButton.setBounds(141, 63, 116, 31);
 	        contentPane.add(btnNewButton);
 			btnNewButton.addActionListener(new ActionListener() {
 				@Override
@@ -80,8 +83,8 @@ public class ClientView extends JFrame {
 	        
 	        /******************* bouton pour ouvrir la fentre modifierclient  */
 	       // JButton btnNewButton_1 = new JButton("Modifier");
-	        btnNewButton_1.setBounds(141, 105, 116, 31);
-	        contentPane.add(btnNewButton_1);
+		   btnNewButton_1.setBounds(141, 105, 116, 31);
+		   contentPane.add(btnNewButton_1);
 			btnNewButton_1.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e2 ){
 					if(e2.getSource() == btnNewButton_1){
@@ -97,7 +100,7 @@ public class ClientView extends JFrame {
 	        
 	        /******************** bouton pour ouvrir la fentre annulerclient  */
 	        //JButton btnNewButton_2 = new JButton("Annuler");
-	        btnNewButton_2.setBounds(141, 198, 116, 31);
+			btnNewButton_2.setBounds(141, 156, 116, 31);
 	        contentPane.add(btnNewButton_2);
 			btnNewButton_2.addActionListener(new ActionListener() {
 				public void actionPerformed (ActionEvent e3){
@@ -118,14 +121,8 @@ public class ClientView extends JFrame {
 
 	        /* ce boutton n ouvre pas de fentre mais crre une demande de nettoyage chezz l admin */
 	        //JButton btnNewButton_1_1 = new JButton("Nettoyage ");
-	        btnNewButton_1_1.setBounds(141, 156, 116, 31);
-	        contentPane.add(btnNewButton_1_1);
-
-
-
-
-
-
+	      //  btnNewButton_1_1.setBounds(141, 156, 116, 31);
+	        // contentPane.add(btnNewButton_1_1);
 
 	}
 	/* cette methode est la pour afficher le nom de l adminstrateur qu il a entrer lors de l authentification 

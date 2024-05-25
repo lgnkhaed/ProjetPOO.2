@@ -1,13 +1,9 @@
 package View;
 import java.awt.EventQueue;
-import javax.swing.JFrame;
-import javax.swing.JPanel;
+
 import javax.swing.border.EmptyBorder;
 import Modele.*;
 import java.awt.Color;
-import javax.swing.JLabel;
-import javax.swing.JOptionPane;
-
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -51,10 +47,13 @@ public class AnnulerClientView extends JFrame {
 	 * Create the frame.
 	 */
 	public AnnulerClientView() {
+setTitle("Gestion d'hotel"); 
+
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 450, 300);
+		setBounds(500,200, 450, 300);
+
 		contentPane = new JPanel();
-		contentPane.setBackground(new Color(128, 128, 0));
+		contentPane.setBackground(new Color(173, 216, 230));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 
 		setContentPane(contentPane);
@@ -65,6 +64,7 @@ public class AnnulerClientView extends JFrame {
 		lblAnnulerMaRservation.setBounds(40, 21, 271, 26);
 		lblAnnulerMaRservation.setFont(new Font("Palatino Linotype", Font.PLAIN, 19));
 		contentPane.add(lblAnnulerMaRservation);
+		
 		
 		/* rentre le nom de la reservation */
 		// JLabel lblNewLabel1 = new JLabel("Nom :");
@@ -87,6 +87,7 @@ public class AnnulerClientView extends JFrame {
 		//JButton btnNewButton = new JButton("Confirmer");
 		btnNewButton.setBounds(172, 209, 105, 23);
 		contentPane.add(btnNewButton);
+		
 	 	btnNewButton.addActionListener(new ActionListener() {
 		
 			@Override

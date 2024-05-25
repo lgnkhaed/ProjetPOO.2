@@ -108,10 +108,12 @@ public JTextField getAnnedateFin(){
 	 * Create the frame.
 	 */
 	public ReserverClientView() {
+		setTitle("Gestion d'hotel"); 
+
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 450, 300);
-		contentPane = new JPanel();
-		contentPane.setBackground(new Color(128, 128, 0));
+		setBounds(500,200, 450, 300);
+				contentPane = new JPanel();
+		contentPane.setBackground(new Color(173, 216, 230));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 
 		setContentPane(contentPane);
@@ -124,31 +126,35 @@ public JTextField getAnnedateFin(){
 		lblNewLabel_4.setBounds(31, 69, 113, 14);
 		contentPane.add(lblNewLabel_4);
 		
+		
 		lblnomutil.setBounds(31, 20, 250, 50);
 		contentPane.add(lblnomutil);
 		lblnomutil.setFont(new Font("Palatino Linotype", Font.BOLD, 24));
 		
-		lblNewLabel_1.setBounds(31, 94, 46, 14);
+		
+		lblNewLabel_1.setBounds(15, 94, 46, 14);
 		contentPane.add(lblNewLabel_1);
 		
 		
 		comboBox.setModel(new DefaultComboBoxModel<Integer>(new Integer[] {1, 2,3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15,16,17,18,19,20,21,22,23,24,25,26,27,28, 29, 30, 31}));
 		comboBox.setSelectedIndex(1);
-		comboBox.setBounds(67, 90, 40, 22);
+		comboBox.setBounds(50, 90, 66, 22);
 		contentPane.add(comboBox);
 		
 		
 		comboBox_1.setModel(new DefaultComboBoxModel<Mois>(Mois.values()));
 		comboBox_1.setSelectedIndex(1);
-		comboBox_1.setBounds(169, 90, 86, 22);
+		comboBox_1.setBounds(155, 90, 110, 22);
 		contentPane.add(comboBox_1);
 		
+	
 		
 		lblNewLabel_2.setBounds(125, 94, 46, 14);
 		contentPane.add(lblNewLabel_2);
 		
 		
-		lblNewLabel_3.setBounds(265, 94, 46, 14);
+		
+		lblNewLabel_3.setBounds(280, 94, 46, 14);
 		contentPane.add(lblNewLabel_3);
 		
 		
@@ -160,36 +166,41 @@ public JTextField getAnnedateFin(){
 		
 		
 		
+		
 		/*rentre la date du fin de resservation*/
 		
 		lblNewLabel_4_1.setBounds(31, 121, 113, 14);
 		contentPane.add(lblNewLabel_4_1);
 		
 		
-		lblNewLabel_1_1.setBounds(31, 146, 46, 14);
+		
+	
+		
+		lblNewLabel_1_1.setBounds(15, 146, 46, 14);
 		contentPane.add(lblNewLabel_1_1);
+		
 		
 		
 		comboBox_2.setModel(new DefaultComboBoxModel<Integer>(new Integer[] {1, 2,3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15,16,17,18,19,20,21,22,23,24,25,26,27,28, 29, 30, 31}));
 		comboBox_2.setSelectedIndex(1);
-		comboBox_2.setBounds(67, 142, 40, 22);
+		comboBox_2.setBounds(50, 142, 66, 22);
 		contentPane.add(comboBox_2);
 		
-		
+			
 		lblNewLabel_2_1.setBounds(125, 146, 46, 14);
 		contentPane.add(lblNewLabel_2_1);
 		
 		
 		comboBox_1_1.setModel(new DefaultComboBoxModel<Mois>(Mois.values()));
 		comboBox_1_1.setSelectedIndex(1);
-		comboBox_1_1.setBounds(169, 142, 86, 22);
+		comboBox_1_1.setBounds(155, 142, 110, 22);
 		contentPane.add(comboBox_1_1);
 		
 		
-		lblNewLabel_3_1.setBounds(265, 146, 46, 14);
+		
+		lblNewLabel_3_1.setBounds(280, 146, 46, 14);
 		contentPane.add(lblNewLabel_3_1);
-		
-		
+
 		textField_2.setColumns(10);
 		textField_2.setBounds(321, 143, 69, 20);
 		contentPane.add(textField_2);
@@ -200,6 +211,7 @@ public JTextField getAnnedateFin(){
 		chckbxNewCheckBox.setFont(new Font("Helvetica Neue", Font.PLAIN, 11));
 		chckbxNewCheckBox.setBounds(31, 185, 368, 23);
 		contentPane.add(chckbxNewCheckBox);
+		
 		
 		
 		
