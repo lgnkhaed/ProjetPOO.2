@@ -5,14 +5,18 @@ import java.awt.EventQueue;
 public class App {
     public static void main(String[] args) throws Exception {
         Hotel ht = new Hotel(); 
-        Administrateur admin1 = new Administrateur(ht,"khaled" ,"laggoun", 20, "khaled", "123");
+        Administrateur admin1 = new Administrateur(ht,"khaled" ,"laggoun", 20, "khaled@gmail.com", "123");
         Client client1 = new Client("hamiti", "amine", 20,"amine", "hhhh", ht);
         Client clienth = new Client("ouadahi", "kad", 20,"kad", "haha", ht);
+        Client client3 = new Client("ouadahi", "kad", 20,"kad@gmail.com", "haha", ht);
+        client3.setDemandeeffectue(true);
         Room room1 = new Room(ht,1);
         Room room2 = new Room(ht,2);
-        Room room3 = new Room(ht,3);
+        room1.setState("free");
+        room2.setState("reserved");
+        /*Room room3 = new Room(ht,3);
         Room room4 = new Room(ht,4);
-        Room room5= new Room(ht,20);
+        Room room5= new Room(ht,20);*/ 
         MyFrameView frame = new MyFrameView();
                     new ControlmyFrame(frame);
                     frame.setVisible(true);

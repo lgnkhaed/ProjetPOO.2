@@ -60,7 +60,8 @@ public class AdministrateurView extends JFrame {
         btnNewButton_1.setBounds(253, 130, 135, 23);
         contentPane.add(btnNewButton_1);
         btnNewButton_1.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent ee){ 
+          @Override  
+          public void actionPerformed(ActionEvent ee){ 
                if(ee.getSource() == btnNewButton_1 ){
                  ChambresView ChambPouAdmin = new ChambresView(); 
                  ChambPouAdmin.setVisible(true);

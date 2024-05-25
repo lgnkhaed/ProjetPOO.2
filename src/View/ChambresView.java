@@ -167,7 +167,7 @@ public class ChambresView extends JFrame {
 						JOptionPane.showMessageDialog(null, "Veuillez entre le id de la chambre pour la supprimer ");
 					
 					}else if(Integer.parseInt(textField.getText()) <= 0 ){
-						JOptionPane.showMessageDialog(null, "Veuillez introduire un id correct ");
+						JOptionPane.showMessageDialog(null, "Veuillez entrer un id correct ");
 					}else{
 						Integer num = Integer.parseInt(textField.getText());
                         String id = String.valueOf(num);
@@ -190,7 +190,7 @@ public class ChambresView extends JFrame {
 					}
 				}
                   catch(NumberFormatException ex){
-					JOptionPane.showMessageDialog(null, "Veuillez introduire des chiffres ");
+					JOptionPane.showMessageDialog(null, "Veuillez entrer des chiffres ");
 				 }
 			}
 		});
