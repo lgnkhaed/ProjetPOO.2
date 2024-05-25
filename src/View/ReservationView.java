@@ -104,7 +104,7 @@ public class ReservationView extends JFrame {
 			public void actionPerformed(ActionEvent eee){ 
 				String email = textField.getText();
 			    if(textField.getText().isEmpty()){
-					JOptionPane.showMessageDialog(null, "Veuillez l'adresse email du client   ");
+					JOptionPane.showMessageDialog(null, "Veuillez entrer l'adresse email du client   ");
 				}else if(!EmailValide(email)){
 					JOptionPane.showMessageDialog(null, "Veuillez entrer une adresse email valide  ");
 				}else {
@@ -134,7 +134,7 @@ public class ReservationView extends JFrame {
 					   }
                     
 					   if(chambrelibre == true){
-						JOptionPane.showMessageDialog(null, "Le client avec l'adresse mail  "+cl1.getEmailadress()+" a réserver la chambre "+ room.getidroom());
+						JOptionPane.showMessageDialog(null, "Le client avec l'adresse mail  "+cl1.getEmailadress()+" a réserver la chambre numéro "+ room.getidroom());
                         room.Changestate();
 						cl1.setDemandeeffectue(true);
 					   }else{
@@ -166,9 +166,9 @@ public class ReservationView extends JFrame {
 				Integer num = Integer.parseInt(textField_1.getText());
 				String id = String.valueOf(num);
 				if(textField_1.getText().isEmpty()){
-				JOptionPane.showMessageDialog(null, "Veuillez entrez la chambre que vous voulez libérer");
+				JOptionPane.showMessageDialog(null, "Veuillez entrer la chambre que vous voulez libérer");
 			    }else if( num <= 0){
-				JOptionPane.showMessageDialog(null, "Veuillez entrez un id correct");
+				JOptionPane.showMessageDialog(null, "Veuillez entrer un numéro correct");
 			    }else{
 					
 					Room rm = null;
@@ -186,11 +186,11 @@ public class ReservationView extends JFrame {
 								
 					}else{
                         if(rm.getState().equals("free")){
-							JOptionPane.showMessageDialog(null, "La chambre avec id " + id +" est déja libre");
+							JOptionPane.showMessageDialog(null, "La chambre numéro " + id +" est déja libre");
 
 						}else{
 						   rm.setState("free");
-						  JOptionPane.showMessageDialog(null, "La chambre avec id : " + id +" est libérée");
+						  JOptionPane.showMessageDialog(null, "La chambre numéro : " + id +" est libérée");
 
 						}
                         

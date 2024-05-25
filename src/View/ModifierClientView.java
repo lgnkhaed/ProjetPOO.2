@@ -200,9 +200,9 @@ public class ModifierClientView extends JFrame {
 
                     }
 					if(ModifierClientView.this.getClient().getDemandeeffectue() == true)
-					JOptionPane.showMessageDialog(null, "Votre modification est  est efféctuée " );	
+					JOptionPane.showMessageDialog(null, "Votre modification a été efféctuée " );	
                     else{
-						JOptionPane.showMessageDialog(null, "Aucune demande réservation trouvée  " );
+						JOptionPane.showMessageDialog(null, "Aucune demande de réservation trouvée  " );
 					}
 				
 				}catch( NumberFormatException ex){

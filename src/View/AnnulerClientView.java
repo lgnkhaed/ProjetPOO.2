@@ -95,13 +95,13 @@ setTitle("Gestion d'hotel");
 			if(chckbxNewCheckBox.isSelected()){	
 				
 				if(AnnulerClientView.this.getClient().getDemandeeffectue() == false){
-					JOptionPane.showMessageDialog(null, "Aucune Réservation trouvée " );
+					JOptionPane.showMessageDialog(null, "Aucune réservation trouvée " );
 			   }else{
 				   AnnulerClientView.this.getClient().setDemandeeffectue(false);
-				   JOptionPane.showMessageDialog(null, "Réservation Annulée " );
+				   JOptionPane.showMessageDialog(null, "Réservation annulée " );
 			   }
 			}else{
-				JOptionPane.showMessageDialog(null, "Vous devez accepter les conditions " );
+				JOptionPane.showMessageDialog(null, "Veuillez accepter les conditions d'utilisation " );
 			}
 		}
 	});

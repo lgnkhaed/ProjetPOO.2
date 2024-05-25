@@ -254,7 +254,7 @@ public JTextField getAnnedateFin(){
                         }
 
                     }
-					JOptionPane.showMessageDialog(null, "Votre demande réservation est efféctué " );
+					JOptionPane.showMessageDialog(null, "Votre demande de réservation a été efféctué " );
 					ReserverClientView.this.getClient().setDemandeeffectue(true);
 					ReserverClientView.this.getClient().DemandeReservation(ReserverClientView.this.getHotel(), datedebut ,datefin);	
 
@@ -266,7 +266,7 @@ public JTextField getAnnedateFin(){
 				}  
 				
 				}else{
-				  JOptionPane.showMessageDialog(null, "Vous devez accepter les termes et les conditions ");
+				  JOptionPane.showMessageDialog(null, "Veuillez accepter les termes et les conditions d'utilisation");
 			   }
 			}
 

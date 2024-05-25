@@ -86,10 +86,10 @@ public class ChambresView extends JFrame {
 			public void actionPerformed(ActionEvent e) {
               try{
                 if(textField.getText().isEmpty()){
-					JOptionPane.showMessageDialog(null, "Veuillez entre le id de la chambre pour la créer");
+					JOptionPane.showMessageDialog(null, "Veuillez entre le numéro de la chambre pour la créer");
 				
 				}else if(Integer.parseInt(textField.getText()) <= 0 ){
-					JOptionPane.showMessageDialog(null, "Veuillez introduire un numéro positif ");
+					JOptionPane.showMessageDialog(null, "Veuillez introduire un numéro valide ");
 				}else{
 					Integer num = Integer.parseInt(textField.getText()); 
                       String id = String.valueOf(num);
@@ -166,10 +166,10 @@ public class ChambresView extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				try{
 					if(textField.getText().isEmpty()){
-						JOptionPane.showMessageDialog(null, "Veuillez entre le id de la chambre pour la supprimer ");
+						JOptionPane.showMessageDialog(null, "Veuillez entre le numéro de la chambre pour la supprimer ");
 					
 					}else if(Integer.parseInt(textField.getText()) <= 0 ){
-						JOptionPane.showMessageDialog(null, "Veuillez entrer un id correct ");
+						JOptionPane.showMessageDialog(null, "Veuillez entrer un numéro correct ");
 					}else{
 						Integer num = Integer.parseInt(textField.getText());
                         String id = String.valueOf(num);
@@ -185,9 +185,9 @@ public class ChambresView extends JFrame {
 
 						if(roomexiste){
 							ChambresView.this.getHotel().getlisteRooms().remove(rm.getNumber());
-							JOptionPane.showMessageDialog(null, "La chambre avec le id "+rm.getidroom()+" est supprimée ");
+							JOptionPane.showMessageDialog(null, "La chambre numéro "+rm.getidroom()+" a été supprimée ");
 						}else{
-							JOptionPane.showMessageDialog(null, "La chambre avec le id "+ id +" n'existe pas  ");
+							JOptionPane.showMessageDialog(null, "La chambre numéro "+ id +" n'existe pas  ");
 						}
 					}
 				}
